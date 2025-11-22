@@ -25,6 +25,9 @@
               Carrito<span v-if="itemCount"> ({{ itemCount }})</span>
             </RouterLink>
           </li>
+          <li v-if="!isAdmin">
+            <RouterLink to="/admin/login" @click="isMenuOpen = false">Login admin</RouterLink>
+          </li>
           <li v-if="isAdmin">
             <RouterLink to="/admin/productos" @click="isMenuOpen = false">Panel admin</RouterLink>
           </li>

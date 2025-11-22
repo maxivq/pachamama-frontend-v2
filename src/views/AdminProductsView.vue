@@ -166,6 +166,7 @@ function ensureAuthOrRedirect(err) {
     localStorage.removeItem('pachamama_admin_token');
     localStorage.removeItem('pachamama_admin_info');
     delete api.defaults.headers.common.Authorization;
+    window.dispatchEvent(new Event('pachamama-admin-changed'));
     router.push('/admin/login');
   }
 }
@@ -278,6 +279,7 @@ function handleLogout() {
   localStorage.removeItem('pachamama_admin_token');
   localStorage.removeItem('pachamama_admin_info');
   delete api.defaults.headers.common.Authorization;
+   window.dispatchEvent(new Event('pachamama-admin-changed'));
   router.push('/admin/login');
 }
 
