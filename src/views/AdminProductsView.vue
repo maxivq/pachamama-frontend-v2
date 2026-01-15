@@ -203,7 +203,7 @@ async function fetchProducts() {
   listError.value = '';
   try {
     const { data } = await api.get('/products', {
-      params: { page: 1, limit: 100 },
+      params: { all: true },
     });
     products.value = data.items;
   } catch (err) {
